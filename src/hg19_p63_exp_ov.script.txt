@@ -1,0 +1,6 @@
+#! /bin/bash
+for i in $(seq 1 1000);
+  do for j in $(ls ../data/encode/);
+    do bedtools shuffle -seed $i -i ../data/hg19/p63all_sort_merge_hg.19.bed -g ../data/hg19/hg19.genome | bedtools intersect -a stdin -b ../data/hg19/encode/peaks/$j | wc -l >> ../results/tables/p63_exp_\$j
+  ;done
+;done
