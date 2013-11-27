@@ -19,3 +19,6 @@ p <- p + labs(list(title = "Observed vs. Expercted p63 BS - Histone BS overlap",
 svg("results/plots/hg19_p63_hist_obs_vs_exp_all.svg",width = 14 ,height = 7)
 p
 dev.off()
+png("results/plots/hg19_p63_hist_obs_vs_exp_all.png",width = 800, height = 400)
+p
+dev.off()
