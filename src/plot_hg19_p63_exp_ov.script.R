@@ -11,4 +11,9 @@ myDataFrame<-melt.list(myDataList,id=1:3)
 names(myDataFrame)<-c(names(myDataFrame)[-length(names(myDataFrame))],"Histone Modification")
 myDataFrame[,"Histone Modification"]<-as.factor(myDataFrame[,"Histone Modification"])
 str(myDataFrame)
-ggplot(myDataFrame,aes(get('Histone Modification'),Overlap)) + geom_violin()
+p <- ggplot(myDataFrame,aes(get('Histone Modification'),log2(Overlap)))
+p <- p + geom_boxplot() + geom_point(aes(color = Group)) 
+p <- p + labs(list(title = "Observed vs. Expercted p63 BS - Histone BS overlap",
+                   x = "Histone Modifications", 
+                   y = "log2(Overlap)", colour = ""))
+p
