@@ -20,6 +20,6 @@ myVenn<-Venn(list(myData$NhekH3k27ac[,1],
 svg("../results/plots/venn_h3k4me1_h3k4me3_h3k27ac.svg")
 plot(myVenn)
 dev.off()
-svg("../results/plots/venn_h3k4me1_h3k4me3_h3k27ac.svg")
+png("../results/plots/venn_h3k4me1_h3k4me3_h3k27ac.png")
 plot(myVenn)
 dev.off()
